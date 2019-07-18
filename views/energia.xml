@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+       <!--
+        <record id="alumbrado_solicitud_form_view" model="ir.ui.view">
+            <field name="name">alumbrado.solicitud.form.view</field>
+            <field name="model">alumbrado.view.read.online</field>
+            <field name="arch" type="xml">
+              <form string="Form Solicitud">
+                  <sheet>
+                      <group>
+                          <field name="x"/>
+                      </group>
+                  </sheet>
+              </form>
+            </field>
+        </record>-->
+        <!--Tree view-->
+        <!--<record id="alumbrado_solicitud_tree_view" model="ir.ui.view">
+            <field name="name">alumbrado.solicitud.tree.view</field>
+            <field name="model">alumbrado.solicitud</field>
+            <field name="arch" type="xml">
+
+                <tree string="Tree Alumbrado">
+                    <field name="solicitante"/>
+                    <field name="medio"/>
+                    
+                </tree>
+            </field>
+        </record>
+-->
+        <!--Action alumbrado-->
+        <record id="action_alumbrado_solicitud" model="ir.actions.act_window" >
+            <field name="name">action.alumbrado.solicitud</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">alumbrado.view.read.online</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Mi primer reporte de luminarias
+                </p>
+            </field>
+        </record>
+
+        <!--Menus-->
+        <menuitem id="alumbrado_menu_root" name="Subdirección de Gestión de Energía" sequence="1"/>
+        <menuitem id="alumbrado_solicitud_menu_category" name="Subdireccion Eenergia XALAPA" sequence="1" parent="alumbrado_menu_root"/>
+        <menuitem id="action_alumbrado_solicitud_menu" name="Solicitudes (REPORTES)" sequence="1" parent="alumbrado_solicitud_menu_category" action="action_alumbrado_solicitud"/>
+
+</odoo>
+
